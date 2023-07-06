@@ -4,6 +4,7 @@ library easy_extension;
 
 import 'dart:collection';
 import 'dart:convert';
+import 'dart:io';
 import 'dart:math';
 import 'dart:math' as math;
 
@@ -12,6 +13,7 @@ import 'package:crypto/crypto.dart' as crypto;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:path/path.dart' as path_helper;
 import 'package:pigment/pigment.dart';
 
 import 'src/utils/hsl_color.dart';
@@ -24,6 +26,7 @@ part 'src/extensions/color.dart';
 part 'src/extensions/comparator.dart';
 part 'src/extensions/date_time.dart';
 part 'src/extensions/duration.dart';
+part 'src/extensions/file.dart';
 part 'src/extensions/iterable.dart';
 part 'src/extensions/list.dart';
 part 'src/extensions/map.dart';
