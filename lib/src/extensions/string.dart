@@ -77,7 +77,6 @@ extension StringExtension on String {
   bool matches(RegExp regex) => regex.hasMatch(this);
 
   String get uriEncode => Uri.encodeFull(this);
-
   String get uriDecode => Uri.decodeFull(this);
 
   String cardFormatSecret() {
@@ -194,6 +193,8 @@ extension StringExtension on String {
 
     return text;
   }
+
+  bool get isBlank => trimLeft().isEmpty;
 }
 
 extension NullStringExtension on String? {

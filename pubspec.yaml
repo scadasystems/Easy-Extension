@@ -1,6 +1,6 @@
 name: easy_extension
 description: Created by LulzM
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/scadasystems
 
 environment:
@@ -13,7 +13,6 @@ dependencies:
 
   crypto: ^3.0.3
   collection:
-  get:
   intl:
   meta: ^1.9.1
   pigment: ^1.0.4
