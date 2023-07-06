@@ -1,10 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:flutter/material.dart';
 
-class DisplaySizeBox extends StatelessWidget {
+class DummyBox extends StatelessWidget {
   final Size fallbackSize;
 
-  DisplaySizeBox({
+  DummyBox({
     Key? key,
     this.fallbackSize = const Size(1, 150),
   }) : super(key: key);

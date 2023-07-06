@@ -18,7 +18,7 @@ import 'src/utils/hsl_color.dart';
 import 'src/utils/pair.dart';
 
 export 'src/android/android_method.dart';
-export 'src/widgets/display_size_box.dart';
+export 'src/widgets/dummy_box.dart';
 
 part 'src/extensions/color.dart';
 part 'src/extensions/comparator.dart';
