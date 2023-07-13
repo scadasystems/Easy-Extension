@@ -124,11 +124,11 @@ extension StringExtension on String {
 
     if (hasSuffixes) {
       const suffixes = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
-      var i = (log(bytes) / log(1024)).floor();
+      var i = (math.log(bytes) / math.log(1024)).floor();
 
-      return '${(bytes / pow(1024, i)).toStringAsFixed(decimals)} ${suffixes[i]}';
+      return '${(bytes / math.pow(1024, i)).toStringAsFixed(decimals)} ${suffixes[i]}';
     } else {
-      return (bytes / pow(1024, 2)).toStringAsFixed(decimals);
+      return (bytes / math.pow(1024, 2)).toStringAsFixed(decimals);
     }
   }
 

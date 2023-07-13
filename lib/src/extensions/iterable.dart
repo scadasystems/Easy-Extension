@@ -124,7 +124,7 @@ extension IterableExtension<E> on Iterable<E> {
     return this is List<E> ? (this as List<E>).reversed : toList().reversed;
   }
 
-  List<E> shuffled([Random? random]) => toList()..shuffle(random);
+  List<E> shuffled([math.Random? random]) => toList()..shuffle(random);
 
   /// ```dart
   ///final amounts = [2, 3, 4];

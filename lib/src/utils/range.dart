@@ -69,12 +69,12 @@ class IntRange extends IntProgression implements Range<int> {
   IntRange(int first, int endInclusive) : super(first, endInclusive);
 
   @override
-  bool contains(covariant num value) {
+  bool contains(covariant num element) {
     assert(stepSize == 1);
     if (start <= endInclusive) {
-      return start <= value && value <= endInclusive;
+      return start <= element && element <= endInclusive;
     } else {
-      return endInclusive <= value && value <= start;
+      return endInclusive <= element && element <= start;
     }
   }
 }
@@ -108,15 +108,15 @@ class IntProgression extends IterableBase<int> {
   String toString() => '$start..$endInclusive';
 
   @override
-  bool contains(covariant int value) {
+  bool contains(covariant int element) {
     bool inRange;
     if (start <= endInclusive) {
-      inRange = start <= value && value <= endInclusive;
+      inRange = start <= element && element <= endInclusive;
     } else {
-      inRange = endInclusive <= value && value <= start;
+      inRange = endInclusive <= element && element <= start;
     }
     if (!inRange) return false;
-    return _differenceModulo(value, start, stepSize) == 0;
+    return _differenceModulo(element, start, stepSize) == 0;
   }
 
   @override

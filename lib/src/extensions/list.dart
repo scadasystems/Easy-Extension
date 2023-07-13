@@ -202,7 +202,7 @@ abstract class _DelegatingList<E> extends _DelegatingIterable<E> implements List
       delegate.setRange(start, end, iterable, skipCount);
 
   @override
-  void shuffle([Random? random]) => delegate.shuffle(random);
+  void shuffle([math.Random? random]) => delegate.shuffle(random);
 
   @override
   void sort([int Function(E a, E b)? compare]) => delegate.sort(compare);
