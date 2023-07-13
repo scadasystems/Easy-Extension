@@ -1,11 +1,11 @@
 name: easy_extension
 description: Helping the flutter develop.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/scadasystems
 repository: https://github.com/scadasystems/Easy-Extension
 
 environment:
-  sdk: ">=3.0.5 <4.0.0"
+  sdk: ">=3.0.6 <4.0.0"
   flutter: ">=3.3.0"
 
 dependencies:

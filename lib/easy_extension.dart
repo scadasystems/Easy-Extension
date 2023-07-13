@@ -2,17 +2,19 @@
 
 library easy_extension;
 
+import 'dart:async';
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
-import 'dart:math';
 import 'dart:math' as math;
+import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
 import 'package:characters/characters.dart' as characters;
 import 'package:crypto/crypto.dart' as crypto;
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:intl/intl.dart' as intl;
 import 'package:path/path.dart' as path_helper;
 import 'package:pigment/pigment.dart';
 
@@ -20,7 +22,7 @@ import 'src/utils/hsl_color.dart';
 import 'src/utils/pair.dart';
 
 export 'src/android/android_method.dart';
-export 'src/widgets/dummy_box.dart';
+export 'src/widgets/display_box.dart';
 
 part 'src/extensions/color.dart';
 part 'src/extensions/comparator.dart';
@@ -37,3 +39,7 @@ part 'src/extensions/widget.dart';
 part 'src/utils/easy_color.dart';
 part 'src/utils/math_util.dart';
 part 'src/utils/range.dart';
+part 'src/widgets/auto_size_text/auto_size_group.dart';
+part 'src/widgets/auto_size_text/auto_size_group_builder.dart';
+part 'src/widgets/auto_size_text/auto_size_text.dart';
+part 'src/widgets/stateful_wrapper.dart';
