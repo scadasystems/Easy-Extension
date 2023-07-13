@@ -17,7 +17,6 @@ dependencies:
   intl:
   meta: ^1.9.1
   pigment: ^1.0.4
-  plugin_platform_interface: ^2.1.4
 
 dev_dependencies:
   flutter_test:
@@ -25,12 +24,6 @@ dev_dependencies:
   flutter_lints: ^2.0.2
 
 flutter:
-  plugin:
-    platforms:
-      android:
-        package: org.lulzm.easy_extension
-        pluginClass: EasyExtensionPlugin
-
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
