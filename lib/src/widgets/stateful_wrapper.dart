@@ -2,14 +2,16 @@ part of easy_extension;
 
 class StatefulWrapper extends StatefulWidget {
   final VoidCallback? onInit;
+  final VoidCallback? onDispose;
   final Widget child;
 
-  /// If you want use `StatefulWidget's initState()`
+  /// If you want use StatefulWidget's `initState()` or `dispose()`
   ///
-  /// Just call [onInit]
+  /// Just call [onInit] or [onDispose]
   const StatefulWrapper({
     Key? key,
     this.onInit,
+    this.onDispose,
     required this.child,
   }) : super(key: key);
 
@@ -23,6 +25,13 @@ class _StatefulWrapperState extends State<StatefulWrapper> {
     widget.onInit?.call();
 
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    widget.onDispose?.call();
+
+    super.dispose();
   }
 
   @override
