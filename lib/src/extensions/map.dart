@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_function_literals_in_foreach_calls
+
 part of easy_extension;
 
 extension MapExtension<K, V> on Map<K, V> {
@@ -5,14 +7,17 @@ extension MapExtension<K, V> on Map<K, V> {
     if (predicate == null) {
       return length;
     }
+
     var count = 0;
 
     final i = entries.iterator;
+
     while (i.moveNext()) {
       if (predicate(i.current)) {
         count++;
       }
     }
+
     return count;
   }
 
@@ -82,14 +87,18 @@ extension MapExtension<K, V> on Map<K, V> {
     return mapEntries((e) => Pair<K, V>(e.key, e.value)).toList();
   }
 
-  Map deepCopy() {
-    var copy = {};
+  Map<K, V> deepCopy() {
+    var copy = <K, V>{};
 
     forEach((key, value) {
       if (value is Map) {
-        copy[key] = value.deepCopy();
+        copy[key] = value.deepCopy() as V;
       } else if (value is List) {
-        copy[key] = value.map((v) => v is Map ? v.deepCopy() : v).toList();
+        copy[key] = value
+            .map(
+              (v) => (v is Map) ? v.deepCopy() : v,
+            )
+            .toList() as V;
       } else {
         copy[key] = value;
       }

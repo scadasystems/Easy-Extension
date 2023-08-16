@@ -15,19 +15,20 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    var map = {
-      'Key': 'Value',
-    };
+    super.initState();
 
+    _copyMapTest();
+  }
+
+  void _copyMapTest() {
+    Map<String, dynamic> map = {'key': 'Value'};
     var cloneMap = map.deepCopy();
 
-    cloneMap['Key'] = 'Value2';
+    cloneMap['key'] = 'Value2';
 
     debugPrint('Map (${map.hashCode}): $map');
-    debugPrint('Clone Map (${cloneMap.hashCode}): $cloneMap');
-    debugPrint('Same ?: ${map == cloneMap}');
-
-    super.initState();
+    debugPrint('CloneMap (${cloneMap.hashCode}): $cloneMap');
+    debugPrint('Same?: ${map == cloneMap}');
   }
 
   @override
