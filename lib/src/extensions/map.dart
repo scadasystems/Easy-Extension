@@ -81,6 +81,22 @@ extension MapExtension<K, V> on Map<K, V> {
   List<Pair<K, V>> toList() {
     return mapEntries((e) => Pair<K, V>(e.key, e.value)).toList();
   }
+
+  Map deepCopy() {
+    var copy = {};
+
+    forEach((key, value) {
+      if (value is Map) {
+        copy[key] = value.deepCopy();
+      } else if (value is List) {
+        copy[key] = value.map((v) => v is Map ? v.deepCopy() : v).toList();
+      } else {
+        copy[key] = value;
+      }
+    });
+
+    return copy;
+  }
 }
 
 extension NullMapExtension<K, V> on Map<K, V>? {

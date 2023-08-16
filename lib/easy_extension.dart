@@ -35,6 +35,8 @@ part 'src/extensions/num.dart';
 part 'src/extensions/string.dart';
 part 'src/extensions/string_buffer.dart';
 part 'src/extensions/widget.dart';
+part 'src/extensions/uint8_list.dart';
+part 'src/extensions/byte_converter.dart';
 part 'src/utils/easy_color.dart';
 part 'src/utils/math_util.dart';
 part 'src/utils/range.dart';
