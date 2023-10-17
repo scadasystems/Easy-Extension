@@ -9,23 +9,25 @@ extension ListExtension<T> on List<T> {
     return result;
   }
 
+  /// ```dart
+  /// var myList = [1, 2, 3];
+  /// print(myList.safeGet(0)); // 1
+  /// print(myList.safeGet(4)); // null
+  /// ```
+  T? safeGet(int index) {
+    if (index >= 0 && index < length) {
+      return this[index];
+    } else {
+      return null;
+    }
+  }
+
   List<dynamic> get distinctListMap {
     final jsonList = map((item) => jsonEncode(item)).toList();
 
     final uniqueJsonList = jsonList.toSet().toList();
 
     return uniqueJsonList.map((item) => jsonDecode(item)).toList();
-  }
-
-  /// ```dart
-  /// final list = [1, 2, 3, 4];
-  /// final first = list.elementAtOrNull(0); // 1
-  /// final fifth = list.elementAtOrNull(4); // null
-  /// ```
-  T? elementAtOrNull(int index) {
-    if (index < 0) return null;
-    if (index >= length) return null;
-    return this[index];
   }
 
   /// ```dart
@@ -97,7 +99,8 @@ class SortedList<E> extends _DelegatingList<E> {
   }
 }
 
-abstract class _DelegatingList<E> extends _DelegatingIterable<E> implements List<E> {
+abstract class _DelegatingList<E> extends _DelegatingIterable<E>
+    implements List<E> {
   @override
   List<E> get delegate;
 
@@ -125,7 +128,8 @@ abstract class _DelegatingList<E> extends _DelegatingIterable<E> implements List
   void clear() => delegate.clear();
 
   @override
-  void fillRange(int start, int end, [E? fillValue]) => delegate.fillRange(start, end, fillValue);
+  void fillRange(int start, int end, [E? fillValue]) =>
+      delegate.fillRange(start, end, fillValue);
 
   @override
   set first(E element) {
@@ -140,13 +144,15 @@ abstract class _DelegatingList<E> extends _DelegatingIterable<E> implements List
   int indexOf(E element, [int start = 0]) => delegate.indexOf(element, start);
 
   @override
-  int indexWhere(bool Function(E element) test, [int start = 0]) => delegate.indexWhere(test, start);
+  int indexWhere(bool Function(E element) test, [int start = 0]) =>
+      delegate.indexWhere(test, start);
 
   @override
   void insert(int index, E element) => delegate.insert(index, element);
 
   @override
-  void insertAll(int index, Iterable<E> iterable) => delegate.insertAll(index, iterable);
+  void insertAll(int index, Iterable<E> iterable) =>
+      delegate.insertAll(index, iterable);
 
   @override
   set last(E element) {
@@ -155,10 +161,12 @@ abstract class _DelegatingList<E> extends _DelegatingIterable<E> implements List
   }
 
   @override
-  int lastIndexOf(E element, [int? start]) => delegate.lastIndexOf(element, start);
+  int lastIndexOf(E element, [int? start]) =>
+      delegate.lastIndexOf(element, start);
 
   @override
-  int lastIndexWhere(bool Function(E element) test, [int? start]) => delegate.lastIndexWhere(test, start);
+  int lastIndexWhere(bool Function(E element) test, [int? start]) =>
+      delegate.lastIndexWhere(test, start);
 
   @override
   set length(int newLength) {
@@ -181,7 +189,8 @@ abstract class _DelegatingList<E> extends _DelegatingIterable<E> implements List
   void removeWhere(bool Function(E element) test) => delegate.removeWhere(test);
 
   @override
-  void replaceRange(int start, int end, Iterable<E> iterable) => delegate.replaceRange(start, end, iterable);
+  void replaceRange(int start, int end, Iterable<E> iterable) =>
+      delegate.replaceRange(start, end, iterable);
 
   @override
   void retainWhere(bool Function(E element) test) => delegate.retainWhere(test);
@@ -190,7 +199,8 @@ abstract class _DelegatingList<E> extends _DelegatingIterable<E> implements List
   Iterable<E> get reversed => delegate.reversed;
 
   @override
-  void setAll(int index, Iterable<E> iterable) => delegate.setAll(index, iterable);
+  void setAll(int index, Iterable<E> iterable) =>
+      delegate.setAll(index, iterable);
 
   @override
   void setRange(
@@ -230,16 +240,19 @@ abstract class _DelegatingIterable<E> implements Iterable<E> {
   bool every(bool Function(E element) test) => delegate.every(test);
 
   @override
-  Iterable<T> expand<T>(Iterable<T> Function(E element) f) => delegate.expand(f);
+  Iterable<T> expand<T>(Iterable<T> Function(E element) f) =>
+      delegate.expand(f);
 
   @override
   E get first => delegate.first;
 
   @override
-  E firstWhere(bool Function(E element) test, {E Function()? orElse}) => delegate.firstWhere(test, orElse: orElse);
+  E firstWhere(bool Function(E element) test, {E Function()? orElse}) =>
+      delegate.firstWhere(test, orElse: orElse);
 
   @override
-  T fold<T>(T initialValue, T Function(T previousValue, E element) combine) => delegate.fold(initialValue, combine);
+  T fold<T>(T initialValue, T Function(T previousValue, E element) combine) =>
+      delegate.fold(initialValue, combine);
 
   @override
   Iterable<E> followedBy(Iterable<E> other) => delegate.followedBy(other);
@@ -263,7 +276,8 @@ abstract class _DelegatingIterable<E> implements Iterable<E> {
   E get last => delegate.last;
 
   @override
-  E lastWhere(bool Function(E element) test, {E Function()? orElse}) => delegate.lastWhere(test, orElse: orElse);
+  E lastWhere(bool Function(E element) test, {E Function()? orElse}) =>
+      delegate.lastWhere(test, orElse: orElse);
 
   @override
   int get length => delegate.length;
@@ -278,19 +292,22 @@ abstract class _DelegatingIterable<E> implements Iterable<E> {
   E get single => delegate.single;
 
   @override
-  E singleWhere(bool Function(E element) test, {E Function()? orElse}) => delegate.singleWhere(test, orElse: orElse);
+  E singleWhere(bool Function(E element) test, {E Function()? orElse}) =>
+      delegate.singleWhere(test, orElse: orElse);
 
   @override
   Iterable<E> skip(int n) => delegate.skip(n);
 
   @override
-  Iterable<E> skipWhile(bool Function(E value) test) => delegate.skipWhile(test);
+  Iterable<E> skipWhile(bool Function(E value) test) =>
+      delegate.skipWhile(test);
 
   @override
   Iterable<E> take(int n) => delegate.take(n);
 
   @override
-  Iterable<E> takeWhile(bool Function(E value) test) => delegate.takeWhile(test);
+  Iterable<E> takeWhile(bool Function(E value) test) =>
+      delegate.takeWhile(test);
 
   @override
   List<E> toList({bool growable = true}) => delegate.toList(growable: growable);
