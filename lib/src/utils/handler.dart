@@ -1,8 +1,8 @@
 import 'dart:async';
 
-/// 딜레이 핸들러
-/// - [startDelayedTask] : 딜레이 태스크 시작
-/// - [stopDelayedTask] : 딜레이 태스크 중지
+/// Delay Handler
+/// - [startDelayedTask] : Start Delayed Task
+/// - [stopDelayedTask] : Stop Delayed Task
 class Handler {
   Completer? _completer;
   bool _isStopped = false;
