@@ -22,7 +22,7 @@ import 'src/utils/hsl_color.dart';
 import 'src/utils/pair.dart';
 
 export 'src/utils/handler.dart';
-export 'src/utils/print.dart';
+export 'src/utils/log.dart';
 export 'src/widgets/display_box.dart';
 
 part 'src/extensions/byte_converter.dart';
