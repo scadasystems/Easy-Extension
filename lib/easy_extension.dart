@@ -36,6 +36,7 @@ part 'src/extensions/iterable.dart';
 part 'src/extensions/list.dart';
 part 'src/extensions/map.dart';
 part 'src/extensions/num.dart';
+part 'src/extensions/scroll_controller.dart';
 part 'src/extensions/string.dart';
 part 'src/extensions/string_buffer.dart';
 part 'src/extensions/uint8_list.dart';
