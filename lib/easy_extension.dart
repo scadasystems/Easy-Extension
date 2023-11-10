@@ -7,6 +7,7 @@ import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
+import 'dart:math';
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
 import 'package:characters/characters.dart' as characters;
@@ -43,6 +44,8 @@ part 'src/extensions/uint8_list.dart';
 part 'src/extensions/widget.dart';
 part 'src/utils/easy_color.dart';
 part 'src/utils/math_util.dart';
+part 'src/utils/ntp/easy_ntp.dart';
+part 'src/utils/ntp/easy_ntp_msg.dart';
 part 'src/utils/range.dart';
 part 'src/widgets/auto_size_text/auto_size_group.dart';
 part 'src/widgets/auto_size_text/auto_size_group_builder.dart';
