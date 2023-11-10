@@ -63,16 +63,16 @@ class _EasyNtpMsg {
   int _version = 3;
 
   /// This value indicates the mode, with values defined as follows:
-  /// Mode     Meaning
-  /// ----     -------
-  /// 0        reserved
-  /// 1        symmetric active
-  /// 2        symmetric passive
-  /// 3        client
-  /// 4        server
-  /// 5        broadcast
-  /// 6        reserved for NTP control message
-  /// 7        reserved for private use
+  /// | Mode   |  Meaning |
+  /// | --- | --- |
+  /// |0   |     reserved |
+  /// |1   |     symmetric active |
+  /// |2   |     symmetric passive |
+  /// |3   |     client |
+  /// |4   |     server |
+  /// |5   |     broadcast |
+  /// |6   |     reserved for NTP control message |
+  /// |7   |     reserved for private use |
   ///
   /// In unicast and anycast modes, the client sets this field to 3 (client)
   /// in the request and the server sets it to 4 (server) in the reply. In
@@ -83,10 +83,10 @@ class _EasyNtpMsg {
   /// defined as follows:
   /// Stratum  Meaning
   /// ----------------------------------------------
-  /// 0        unspecified or unavailable
-  /// 1        primary reference (e.g., radio clock)
-  /// 2-15     secondary reference (via NTP or SNTP)
-  /// 16-255   reserved
+  /// - 0        unspecified or unavailable
+  /// - 1        primary reference (e.g., radio clock)
+  /// - 2-15     secondary reference (via NTP or SNTP)
+  /// - 16-255   reserved
   int _stratum = 0;
 
   /// This value indicates the maximum interval between successive messages,

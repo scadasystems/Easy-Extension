@@ -23,14 +23,12 @@ extension StringExtension on String {
   /// ```dart
   /// 'hello'.firstUpperCase // Hello
   /// ```
-  String get firstUpperCase =>
-      length > 1 ? this[0].toUpperCase() + substring(1) : '';
+  String get firstUpperCase => length > 1 ? this[0].toUpperCase() + substring(1) : '';
 
   /// ```dart
   /// 'HELLO'.firstLowerCase // hELLO
   /// ```
-  String get firstLowerCase =>
-      length > 1 ? this[0].toLowerCase() + substring(1) : '';
+  String get firstLowerCase => length > 1 ? this[0].toLowerCase() + substring(1) : '';
 
   /// ```dart
   /// 'Hi'.isFirstUpperCase // true
@@ -199,6 +197,15 @@ extension StringExtension on String {
   bool get isBlank => trimLeft().isEmpty;
 
   Uint8List get toUint8List => base64Decode(this);
+
+  bool isJson() {
+    try {
+      jsonDecode(this);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
 }
 
 extension NullStringExtension on String? {
