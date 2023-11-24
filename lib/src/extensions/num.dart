@@ -45,8 +45,7 @@ extension DoubleExtension on double {
 extension NumExtension<T extends num> on T {
   bool inRange(Range<num> range) => range.contains(this);
 
-  bool between(num first, num endInclusive) =>
-      first.rangeTo(endInclusive).contains(this);
+  bool between(num first, num endInclusive) => first.rangeTo(endInclusive).contains(this);
 
   /// ```dart
   /// print(10.coerceAtMost(5)) // 5
@@ -82,14 +81,10 @@ extension NumExtension<T extends num> on T {
   Duration get toMillisecond => NumExtension(this * 1000).toMicrosecond;
   Duration get toSecond => NumExtension(this * 1000 * 1000).toMicrosecond;
   Duration get toMinute => NumExtension(this * 1000 * 1000 * 60).toMicrosecond;
-  Duration get toHour =>
-      NumExtension(this * 1000 * 1000 * 60 * 60).toMicrosecond;
-  Duration get toDay =>
-      NumExtension(this * 1000 * 1000 * 60 * 60 * 24).toMicrosecond;
+  Duration get toHour => NumExtension(this * 1000 * 1000 * 60 * 60).toMicrosecond;
+  Duration get toDay => NumExtension(this * 1000 * 1000 * 60 * 60 * 24).toMicrosecond;
 
-  double get px =>
-      this / PlatformDispatcher.instance.views.first.devicePixelRatio;
+  double get px => kIsWeb ? (this * 1) : (this / PlatformDispatcher.instance.views.first.devicePixelRatio);
 
-  double get pxReal =>
-      this * PlatformDispatcher.instance.views.first.devicePixelRatio;
+  double get pxReal => this * PlatformDispatcher.instance.views.first.devicePixelRatio;
 }
