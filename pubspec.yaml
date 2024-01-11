@@ -15,14 +15,15 @@ dependencies:
   crypto: ^3.0.3
   collection:
   encrypt: ^5.0.1
+  gap: ^3.0.1
   intl:
-  meta: ^1.9.1
+  meta: ^1.10.0
   pigment: ^1.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.2
+  flutter_lints: ^3.0.1
 
 flutter:
   # assets:
