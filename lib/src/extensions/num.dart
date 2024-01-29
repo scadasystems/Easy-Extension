@@ -87,4 +87,14 @@ extension NumExtension<T extends num> on T {
   double get px => kIsWeb ? (this * 1) : (this / PlatformDispatcher.instance.views.first.devicePixelRatio);
 
   double get pxReal => this * PlatformDispatcher.instance.views.first.devicePixelRatio;
+
+  /// ```dart
+  /// print(32400.formatTzOffsetToUTC;) // UTC+9:00
+  /// print(34200.formatTzOffsetToUTC;) // UTC+9:30
+  /// ```
+  String get formatTzOffsetToUTC {
+    int hours = this ~/ 3600;
+    int minutes = (this % 3600) ~/ 60;
+    return 'UTC${hours >= 0 ? '+' : '-'}${hours.abs()}:${minutes.toString().padLeft(2, '0')}';
+  }
 }
