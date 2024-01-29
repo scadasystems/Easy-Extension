@@ -95,6 +95,6 @@ extension NumExtension<T extends num> on T {
   String get formatTzOffsetToUTC {
     int hours = this ~/ 3600;
     int minutes = (this % 3600) ~/ 60;
-    return 'UTC${hours >= 0 ? '+' : '-'}${hours.abs()}:${minutes.toString().padLeft(2, '0')}';
+    return 'UTC${hours >= 0 ? '+' : '-'}${hours.abs()}${minutes != 0 ? ":${minutes.toString().padLeft(2, '0')}" : ''}';
   }
 }
