@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 class StatefulWrapper extends StatefulWidget {
   final VoidCallback? onInit;
@@ -9,11 +9,11 @@ class StatefulWrapper extends StatefulWidget {
   ///
   /// Just call [onInit] or [onDispose]
   const StatefulWrapper({
-    Key? key,
+    super.key,
     this.onInit,
     this.onDispose,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWrapper> createState() => _StatefulWrapperState();

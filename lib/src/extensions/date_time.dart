@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension DateTimeExtension on DateTime {
   String get toTwoLine => intl.DateFormat('yyyy-MM-dd\nHH:mm:ss').format(this);

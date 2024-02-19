@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../../easy_extension.dart';
 
 const _defaultLookup = 'time.google.com';
 

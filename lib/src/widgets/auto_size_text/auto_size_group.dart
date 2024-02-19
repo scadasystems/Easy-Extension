@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../../easy_extension.dart';
 
 /// Controller to synchronize the fontSize of multiple AutoSizeTexts.
 class AutoSizeGroup {

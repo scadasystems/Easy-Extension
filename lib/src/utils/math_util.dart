@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 class MathUtil {
   /// 최소 공배수

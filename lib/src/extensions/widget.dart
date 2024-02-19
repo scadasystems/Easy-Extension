@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension SizedboxExtension on num {
   Widget get widthBox => SizedBox(width: toDouble());

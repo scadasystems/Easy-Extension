@@ -14,7 +14,7 @@ class DisplayBox extends StatelessWidget {
   /// Shows the pixel size for the area it occupies.
   ///
   DisplayBox({
-    Key? key,
+    super.key,
     this.fallbackSize = const Size(1, 150),
     this.lineColor = Colors.grey,
     this.backgroundColor = Colors.white,
@@ -22,7 +22,7 @@ class DisplayBox extends StatelessWidget {
     this.textStyle,
     this.alignment = Alignment.center,
     this.margin,
-  }) : super(key: key);
+  });
 
   final ValueNotifier<Size> _size = ValueNotifier(const Size(0, 0));
 

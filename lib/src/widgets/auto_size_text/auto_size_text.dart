@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../../easy_extension.dart';
 
 /// Flutter widget that automatically resizes text to fit perfectly within its
 /// bounds.
@@ -29,7 +29,7 @@ class AutoSizeText extends StatefulWidget {
   ///
   const AutoSizeText(
     String this.text, {
-    Key? key,
+    super.key,
     this.textKey,
     this.style,
     this.strutStyle,
@@ -66,8 +66,7 @@ class AutoSizeText extends StatefulWidget {
         minLines = null,
         selectionHeightStyle = ui.BoxHeightStyle.tight,
         selectionWidthStyle = ui.BoxWidthStyle.tight,
-        _isSelectableText = false,
-        super(key: key);
+        _isSelectableText = false;
 
   /// Creates a [AutoSizeText] widget with a [TextSpan].
   ///
@@ -86,7 +85,7 @@ class AutoSizeText extends StatefulWidget {
   ///
   const AutoSizeText.rich(
     TextSpan this.textSpan, {
-    Key? key,
+    super.key,
     this.textKey,
     this.style,
     this.strutStyle,
@@ -123,13 +122,12 @@ class AutoSizeText extends StatefulWidget {
         minLines = null,
         selectionHeightStyle = ui.BoxHeightStyle.tight,
         selectionWidthStyle = ui.BoxWidthStyle.tight,
-        _isSelectableText = false,
-        super(key: key);
+        _isSelectableText = false;
 
   /// Creates a selectable [AutoSizeText] widget with a [TextSpan].
   const AutoSizeText.richSelectable(
     this.textSpan, {
-    Key? key,
+    super.key,
     this.textKey,
     this.style,
     this.strutStyle,
@@ -167,8 +165,7 @@ class AutoSizeText extends StatefulWidget {
         overflow = null,
         overflowReplacement = null,
         semanticsLabel = null,
-        _isSelectableText = true,
-        super(key: key);
+        _isSelectableText = true;
 
   /// Creates a selectable [AutoSizeText] widget.
   ///
@@ -176,7 +173,7 @@ class AutoSizeText extends StatefulWidget {
   /// closest enclosing [DefaultTextStyle].
   const AutoSizeText.selectable(
     this.text, {
-    Key? key,
+    super.key,
     this.textKey,
     this.style,
     this.strutStyle,
@@ -214,8 +211,7 @@ class AutoSizeText extends StatefulWidget {
         overflow = null,
         overflowReplacement = null,
         semanticsLabel = null,
-        _isSelectableText = true,
-        super(key: key);
+        _isSelectableText = true;
 
   /// Sets the key for the resulting [Text] widget.
   ///
@@ -574,7 +570,8 @@ class _AutoSizeTextState extends State<AutoSizeText> {
 
   void _validateProperties(TextStyle style, int? maxLines) {
     if (!widget._isSelectableText) {
-      assert(widget.overflow == null || widget.overflowReplacement == null, 'Either overflow or overflowReplacement must be null.');
+      assert(widget.overflow == null || widget.overflowReplacement == null,
+          'Either overflow or overflowReplacement must be null.');
     }
     assert(maxLines == null || maxLines > 0, 'MaxLines must be greater than or equal to 1.');
     assert(widget.key == null || widget.key != widget.textKey, 'Key and textKey must not be equal.');
@@ -587,9 +584,11 @@ class _AutoSizeTextState extends State<AutoSizeText> {
       assert(widget.minFontSize >= 0, 'MinFontSize must be greater than or equal to 0.');
       assert(widget.maxFontSize > 0, 'MaxFontSize has to be greater than 0.');
       assert(widget.minFontSize <= widget.maxFontSize, 'MinFontSize must be smaller or equal than maxFontSize.');
-      assert(widget.minFontSize / widget.stepGranularity % 1 == 0, 'MinFontSize must be a multiple of stepGranularity.');
+      assert(
+          widget.minFontSize / widget.stepGranularity % 1 == 0, 'MinFontSize must be a multiple of stepGranularity.');
       if (widget.maxFontSize != double.infinity) {
-        assert(widget.maxFontSize / widget.stepGranularity % 1 == 0, 'MaxFontSize must be a multiple of stepGranularity.');
+        assert(
+            widget.maxFontSize / widget.stepGranularity % 1 == 0, 'MaxFontSize must be a multiple of stepGranularity.');
       }
     } else {
       assert(widget.presetFontSizes!.isNotEmpty, 'PresetFontSizes must not be empty.');
@@ -695,7 +694,9 @@ class _AutoSizeTextState extends State<AutoSizeText> {
       textPainter.layout(maxWidth: constraints.maxWidth);
     }
 
-    return !(textPainter.didExceedMaxLines || textPainter.height > constraints.maxHeight || textPainter.width > constraints.maxWidth);
+    return !(textPainter.didExceedMaxLines ||
+        textPainter.height > constraints.maxHeight ||
+        textPainter.width > constraints.maxWidth);
   }
 
   Widget _buildText(double fontSize, TextStyle style, int? maxLines) {

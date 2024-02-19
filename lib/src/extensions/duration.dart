@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension DurationExtension on Duration {
   String toTimeString({bool hasSec = true}) {

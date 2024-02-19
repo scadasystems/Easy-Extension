@@ -1,11 +1,11 @@
-part of easy_extension;
+part of '../../../easy_extension.dart';
 
 /// A Flutter widget that provides an [AutoSizeGroup] to its builder function.
 class AutoSizeGroupBuilder extends StatefulWidget {
   final Widget Function(BuildContext context, AutoSizeGroup autoSizeGroup) builder;
 
   /// Creates an [AutoSizeGroupBuilder] widget.
-  const AutoSizeGroupBuilder({Key? key, required this.builder}) : super(key: key);
+  const AutoSizeGroupBuilder({super.key, required this.builder});
 
   @override
   State<AutoSizeGroupBuilder> createState() => _AutoSizeGroupBuilderState();

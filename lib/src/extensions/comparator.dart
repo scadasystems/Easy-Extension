@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension CompararatorComposeExtensions<T> on Comparator<T> {
   Comparator<T> compose(Comparator<T> then) {

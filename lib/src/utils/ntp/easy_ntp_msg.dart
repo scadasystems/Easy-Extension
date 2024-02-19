@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../../easy_extension.dart';
 
 class _EasyNtpMsg {
   /// Constructs a NtpMessage in client -> server mode, and sets the

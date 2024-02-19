@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 enum SizeUnit { tb, gb, mb, kb, byte }
 
@@ -35,42 +35,31 @@ class ByteConverter {
 
   double get petaBytes => _bytes / 1E+15;
 
-  double asBytes({int precision = 2}) =>
-      _withPrecision(_bytes, precision: precision);
+  double asBytes({int precision = 2}) => _withPrecision(_bytes, precision: precision);
 
   static ByteConverter fromBytes(double value) => ByteConverter(value);
 
   static ByteConverter fromBits(int value) => ByteConverter.withBits(value);
 
-  static ByteConverter fromKibiBytes(double value) =>
-      ByteConverter(value * 1024.0);
+  static ByteConverter fromKibiBytes(double value) => ByteConverter(value * 1024.0);
 
-  static ByteConverter fromMebiBytes(double value) =>
-      ByteConverter(value * 1048576.0);
+  static ByteConverter fromMebiBytes(double value) => ByteConverter(value * 1048576.0);
 
-  static ByteConverter fromGibiBytes(double value) =>
-      ByteConverter(value * 1073741824.0);
+  static ByteConverter fromGibiBytes(double value) => ByteConverter(value * 1073741824.0);
 
-  static ByteConverter fromTebiBytes(double value) =>
-      ByteConverter(value * 1099511627776.0);
+  static ByteConverter fromTebiBytes(double value) => ByteConverter(value * 1099511627776.0);
 
-  static ByteConverter fromPebiBytes(double value) =>
-      ByteConverter(value * 1125899906842624.0);
+  static ByteConverter fromPebiBytes(double value) => ByteConverter(value * 1125899906842624.0);
 
-  static ByteConverter fromKiloBytes(double value) =>
-      ByteConverter(value * 1000.0);
+  static ByteConverter fromKiloBytes(double value) => ByteConverter(value * 1000.0);
 
-  static ByteConverter fromMegaBytes(double value) =>
-      ByteConverter(value * 1000000.0);
+  static ByteConverter fromMegaBytes(double value) => ByteConverter(value * 1000000.0);
 
-  static ByteConverter fromGigaBytes(double value) =>
-      ByteConverter(value * 1000000000.0);
+  static ByteConverter fromGigaBytes(double value) => ByteConverter(value * 1000000000.0);
 
-  static ByteConverter fromTeraBytes(double value) =>
-      ByteConverter(value * 1000000000000.0);
+  static ByteConverter fromTeraBytes(double value) => ByteConverter(value * 1000000000000.0);
 
-  static ByteConverter fromPetaBytes(double value) =>
-      ByteConverter(value * 1E+15);
+  static ByteConverter fromPetaBytes(double value) => ByteConverter(value * 1E+15);
 
   ByteConverter add(ByteConverter value) => this + value;
 
@@ -98,11 +87,9 @@ class ByteConverter {
 
   ByteConverter addPebiBytes(double value) => this + fromPebiBytes(value);
 
-  ByteConverter operator +(ByteConverter instance) =>
-      ByteConverter(instance._bytes + _bytes);
+  ByteConverter operator +(ByteConverter instance) => ByteConverter(instance._bytes + _bytes);
 
-  ByteConverter operator -(ByteConverter instance) =>
-      ByteConverter(_bytes - instance._bytes);
+  ByteConverter operator -(ByteConverter instance) => ByteConverter(_bytes - instance._bytes);
 
   bool operator >(ByteConverter instance) => _bits > instance._bits;
 
@@ -112,8 +99,7 @@ class ByteConverter {
 
   bool operator >=(ByteConverter instance) => _bits >= instance._bits;
 
-  static int compare(ByteConverter a, ByteConverter b) =>
-      a._bits.compareTo(b._bits);
+  static int compare(ByteConverter a, ByteConverter b) => a._bits.compareTo(b._bits);
 
   static bool isEqual(ByteConverter a, ByteConverter b) => a.isEqualTo(b);
 

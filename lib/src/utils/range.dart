@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 abstract class Range<T extends Comparable> {
   const Range();
@@ -19,7 +19,9 @@ abstract class Range<T extends Comparable> {
   String toString() => '$start..$endInclusive';
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is Range && runtimeType == other.runtimeType && start == other.start && endInclusive == other.endInclusive;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Range && runtimeType == other.runtimeType && start == other.start && endInclusive == other.endInclusive;
 
   @override
   int get hashCode => start.hashCode ^ endInclusive.hashCode;
@@ -120,7 +122,13 @@ class IntProgression extends IterableBase<int> {
   }
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IntProgression && runtimeType == other.runtimeType && _first == other._first && _last == other._last && stepSize == other.stepSize;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is IntProgression &&
+          runtimeType == other.runtimeType &&
+          _first == other._first &&
+          _last == other._last &&
+          stepSize == other.stepSize;
 
   @override
   int get hashCode => _first.hashCode ^ _last.hashCode ^ stepSize.hashCode;

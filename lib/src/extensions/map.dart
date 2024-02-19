@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_function_literals_in_foreach_calls
 
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension MapExtension<K, V> on Map<K, V> {
   int count([bool Function(MapEntry<K, V>)? predicate]) {

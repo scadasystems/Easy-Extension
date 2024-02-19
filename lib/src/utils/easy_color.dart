@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 class EasyColor {
   late Color _color;
@@ -130,7 +130,11 @@ class EasyColor {
 
   EasyColor mix({required Color input, int amount = 50}) {
     final int p = (amount / 100).round();
-    final color = Color.fromARGB((input.alpha - _color.alpha) * p + _color.alpha, (input.red - _color.red) * p + _color.red, (input.green - _color.green) * p + _color.green, (input.blue - _color.blue) * p + _color.blue);
+    final color = Color.fromARGB(
+        (input.alpha - _color.alpha) * p + _color.alpha,
+        (input.red - _color.red) * p + _color.red,
+        (input.green - _color.green) * p + _color.green,
+        (input.blue - _color.blue) * p + _color.blue);
     return EasyColor(color);
   }
 

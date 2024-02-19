@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension IterableExtension<E> on Iterable<E> {
   List<E> slice(int start, [int end = -1]) {

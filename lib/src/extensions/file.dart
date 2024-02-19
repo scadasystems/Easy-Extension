@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension FileExtension on File {
   Future<void> appendBytes(List<int> bytes) async {

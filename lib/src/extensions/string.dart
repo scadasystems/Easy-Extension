@@ -1,6 +1,6 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension StringExtension on String {
   int toInt({int? radix}) => int.parse(this, radix: radix);

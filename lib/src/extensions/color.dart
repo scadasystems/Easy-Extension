@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension ColorExtension on Color {
   String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'
@@ -43,8 +43,7 @@ extension ColorExtension on Color {
   Color shade([int amount = 10]) => EasyColor(this).shade(amount).color;
 
   /// Desaturate the color a given amount, from 0 to 100. Providing 100 will is the same as calling greyscale.
-  Color desaturate([int amount = 10]) =>
-      EasyColor(this).desaturate(amount).color;
+  Color desaturate([int amount = 10]) => EasyColor(this).desaturate(amount).color;
 
   /// Saturate the color a given amount, from 0 to 100.
   Color saturate([int amount = 10]) => EasyColor(this).saturate(amount).color;
@@ -71,11 +70,9 @@ extension ColorExtension on Color {
   Color get compliment => EasyColor(this).complement().color;
 
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
-  Color mix(Color toColor, [int amount = 50]) =>
-      EasyColor(this).mix(input: toColor, amount: amount).color;
+  Color mix(Color toColor, [int amount = 50]) => EasyColor(this).mix(input: toColor, amount: amount).color;
 
   /// Font color  contrasted against color. <br>
   /// Only [Colors.black] & [Color.white]
-  Color get getFontColorRelativeBackgroundColor =>
-      computeLuminance() > 0.179 ? Colors.black : Colors.white;
+  Color get getFontColorRelativeBackgroundColor => computeLuminance() > 0.179 ? Colors.black : Colors.white;
 }

@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 extension IntExtension on int {
   Uint8List toBytes([Endian endian = Endian.big]) {

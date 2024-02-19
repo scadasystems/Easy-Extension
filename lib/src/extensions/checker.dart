@@ -1,4 +1,4 @@
-part of easy_extension;
+part of '../../easy_extension.dart';
 
 class Checker {
   static Future<bool?> isVpnActive() async {
@@ -12,9 +12,7 @@ class Checker {
 
       interfaces.isNotEmpty
           ? isVpnActive = interfaces.any((interface) =>
-              interface.name.contains("tun") ||
-              interface.name.contains("ppp") ||
-              interface.name.contains("pptp"))
+              interface.name.contains("tun") || interface.name.contains("ppp") || interface.name.contains("pptp"))
           : isVpnActive = false;
 
       return isVpnActive;
