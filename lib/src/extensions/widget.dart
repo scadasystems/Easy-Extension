@@ -6,6 +6,11 @@ extension SizedboxExtension on num {
 }
 
 extension GapExtension on num {
-  Widget get gap => const Gap(20);
-  Widget get gapSliver => const SliverGap(20);
+  Widget get gap => Gap(toDouble());
+  Widget get sliverGap => SliverGap(toDouble());
+}
+
+extension InlineSpanExtension on num {
+  WidgetSpan get widthSpan => WidgetSpan(child: SizedBox(width: toDouble()));
+  WidgetSpan get heightSpan => WidgetSpan(child: SizedBox(height: toDouble()));
 }
