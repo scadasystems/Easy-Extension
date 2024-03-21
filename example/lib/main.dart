@@ -38,12 +38,12 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: const Center(
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Easy Extension'),
-              Text('Created by Lulz_M'),
+              const Text('Easy Extension\nCreated by Lulz_M'),
+              Text('Time Ago: ${DateTime.now().add(-1.toMinute).toTimeAgo()}'),
             ],
           ),
         ),

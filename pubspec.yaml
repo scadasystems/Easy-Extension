@@ -1,6 +1,6 @@
 name: easy_extension
 description: Useful Extensions for Flutter.
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/scadasystems
 repository: https://github.com/scadasystems/Easy-Extension
 
@@ -19,6 +19,7 @@ dependencies:
   intl:
   meta: ^1.10.0
   pigment: ^1.0.4
+  timeago: ^3.6.1
 
 dev_dependencies:
   flutter_test:

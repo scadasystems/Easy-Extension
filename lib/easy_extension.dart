@@ -19,6 +19,7 @@ import 'package:gap/gap.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:path/path.dart' as path_helper;
 import 'package:pigment/pigment.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 import 'src/utils/hsl_color.dart';
 import 'src/utils/pair.dart';
