@@ -206,6 +206,15 @@ extension StringExtension on String {
       return false;
     }
   }
+
+  /// ```dart
+  /// 'hello.txt'.toWithoutExt() // hello
+  /// 'hello'.toWithoutExt() // hello
+  /// ```
+  String toWithoutExt() {
+    final index = lastIndexOf('.');
+    return index == -1 ? this : substring(0, index);
+  }
 }
 
 extension NullStringExtension on String? {
