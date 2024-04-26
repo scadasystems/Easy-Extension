@@ -26,7 +26,7 @@ import 'src/utils/pair.dart';
 
 export 'src/utils/handler.dart';
 export 'src/utils/log.dart';
-export 'src/widgets/display_box.dart';
+export 'src/widgets/dimension_box.dart';
 
 part 'src/extensions/byte_converter.dart';
 part 'src/extensions/checker.dart';
