@@ -11,6 +11,7 @@ import 'dart:math';
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
 import 'package:characters/characters.dart' as characters;
+import 'package:collection/collection.dart' as collection;
 import 'package:crypto/crypto.dart' as crypto;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';

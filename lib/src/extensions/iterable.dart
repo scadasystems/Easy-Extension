@@ -206,7 +206,8 @@ extension IterableExtension<E> on Iterable<E> {
 
   Iterable<E> filter(bool Function(E element) predicate) => where(predicate);
 
-  Iterable<E> filterIndexed(bool Function(E element, int index) predicate) => this.whereIndexed(predicate);
+  Iterable<E> filterIndexed(bool Function(E element, int index) predicate) =>
+      IterableWhereIndexed(this).whereIndexed(predicate);
 
   /// ```dart
   /// val chars = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -222,5 +223,23 @@ extension IterableExtension<E> on Iterable<E> {
       list.addFirst(element);
     }
     return list;
+  }
+
+  Map<K, List<E>> groupBy<K>(K Function(E element) keySelector) {
+    return collection.groupBy(this, keySelector);
+  }
+}
+
+extension IterableWhereIndexed<E> on Iterable<E> {
+  /// Returns all elements that satisfy the given [predicate].
+  Iterable<E> whereIndexed(
+    bool Function(E element, int index) predicate,
+  ) sync* {
+    var index = 0;
+    for (final element in this) {
+      if (predicate(element, index++)) {
+        yield element;
+      }
+    }
   }
 }
