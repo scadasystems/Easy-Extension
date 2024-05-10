@@ -228,6 +228,10 @@ extension IterableExtension<E> on Iterable<E> {
   Map<K, List<E>> groupBy<K>(K Function(E element) keySelector) {
     return collection.groupBy(this, keySelector);
   }
+
+  String toPostgresArray() {
+    return '{${join(',')}}';
+  }
 }
 
 extension IterableWhereIndexed<E> on Iterable<E> {
