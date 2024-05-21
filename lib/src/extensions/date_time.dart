@@ -28,4 +28,9 @@ extension DateTimeExtension on DateTime {
       allowFromNow: allowFromNow,
     );
   }
+
+  int get daysInMonth => DateTimeRange(
+        start: this,
+        end: DateTime(year, month + 1),
+      ).duration.inDays;
 }
