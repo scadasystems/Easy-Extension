@@ -215,6 +215,12 @@ extension StringExtension on String {
     final index = lastIndexOf('.');
     return index == -1 ? this : substring(0, index);
   }
+
+  bool isMacAddress() {
+    RegExp exp = RegExp(r"^([0-9A-Fa-f]{2}[:]){5}([0-9A-Fa-f]{2})$");
+
+    return exp.hasMatch(this);
+  }
 }
 
 extension NullStringExtension on String? {
