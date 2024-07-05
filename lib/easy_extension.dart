@@ -36,6 +36,7 @@ part 'src/extensions/comparator.dart';
 part 'src/extensions/date_time.dart';
 part 'src/extensions/duration.dart';
 part 'src/extensions/file.dart';
+part 'src/extensions/global_key.dart';
 part 'src/extensions/iterable.dart';
 part 'src/extensions/list.dart';
 part 'src/extensions/map.dart';
