@@ -21,7 +21,13 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _copyMapTest() {
-    Map<String, dynamic> map = {'key': 'Value'};
+    Map<String, dynamic> map = {
+      'key1': 'Value',
+      'key2': 'Value2',
+      'key4': 'Value4',
+      'key5': 'Value5',
+      'key3': 'Value3',
+    };
     var cloneMap = map.deepCopy();
 
     cloneMap['key'] = 'Value2';
@@ -29,6 +35,8 @@ class _MyAppState extends State<MyApp> {
     debugPrint('Map (${map.hashCode}): $map');
     debugPrint('CloneMap (${cloneMap.hashCode}): $cloneMap');
     debugPrint('Same?: ${map == cloneMap}');
+
+    debugPrint(map.sortedByKey().toString());
   }
 
   @override

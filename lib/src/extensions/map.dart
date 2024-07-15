@@ -106,6 +106,28 @@ extension MapExtension<K, V> on Map<K, V> {
 
     return copy;
   }
+
+  Map<K, V> sortedByKey({bool descending = false}) {
+    List<MapEntry<K, V>> sortedEntries;
+    if (descending) {
+      sortedEntries = entries.toList()..sort((e1, e2) => e2.key.toString().compareTo(e1.key.toString()));
+    } else {
+      sortedEntries = entries.toList()..sort((e1, e2) => e1.key.toString().compareTo(e2.key.toString()));
+    }
+
+    return Map<K, V>.fromEntries(sortedEntries);
+  }
+
+  Map<K, V> sortedByValue({bool descending = false}) {
+    List<MapEntry<K, V>> sortedEntries;
+
+    if (descending) {
+      sortedEntries = entries.toList()..sort((e1, e2) => e2.value.toString().compareTo(e1.value.toString()));
+    } else {
+      sortedEntries = entries.toList()..sort((e1, e2) => e1.value.toString().compareTo(e2.value.toString()));
+    }
+    return Map<K, V>.fromEntries(sortedEntries);
+  }
 }
 
 extension NullMapExtension<K, V> on Map<K, V>? {
