@@ -31,6 +31,17 @@ extension StringExtension on String {
   String get firstLowerCase => length > 1 ? this[0].toLowerCase() + substring(1) : '';
 
   /// ```dart
+  /// 'camelCase'.toKebabCase // camel-case
+  /// 'PascalCase'.toKebabCase // pascal-case
+  /// 'snake_case'.toKebabCase // snake-case
+  /// 'kebab-case'.toKebabCase // kebab-case
+  /// ```
+  String get toKebabCase => replaceAllMapped(
+        RegExp(r'([a-z0-9])([A-Z])'),
+        (Match match) => '${match[1]}-${match[2]!.toLowerCase()}',
+      ).replaceAll('_', '-').toLowerCase();
+
+  /// ```dart
   /// 'Hi'.isFirstUpperCase // true
   /// 'hi'.isFirstUpperCase // false
   /// ```
