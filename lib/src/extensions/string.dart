@@ -124,6 +124,27 @@ extension StringExtension on String {
     return str;
   }
 
+  /// ```dart
+  /// 'https://www.youtube.com/watch?v=123'.toExtractDomain() // youtube.com
+  /// 'youtube.com'.toExtractDomain() // youtube.com
+  /// 'youtube'.toExtractDomain()) // youtube
+  /// ```
+  String toExtractDomain() {
+    String url = this;
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      url = 'https://$url';
+    }
+
+    RegExp regExp = RegExp(r'^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)');
+    Match? match = regExp.firstMatch(url);
+
+    if (match != null && match.groupCount >= 1) {
+      return match.group(1) ?? '';
+    } else {
+      return url;
+    }
+  }
+
   bool get validateMAC {
     RegExp exp = RegExp(r"^([0-9A-Fa-f]{2}[:]){5}([0-9A-Fa-f]{2})$");
 
