@@ -72,6 +72,19 @@ extension StringExtension on String {
   /// ```
   bool get isLowerCase => this == toLowerCase() && this != toUpperCase();
 
+  String? get toCamelCase {
+    if (isNullOrBlank) return null;
+
+    final separatedWords = split(RegExp(r'[!@#<>?":`~;[\]\\|=+)(*&^%-\s_]+'));
+    String newString = '';
+
+    for (final word in separatedWords) {
+      newString += word[0].toUpperCase() + word.substring(1).toLowerCase();
+    }
+
+    return newString[0].toLowerCase() + newString.substring(1);
+  }
+
   ///  ```dart
   /// print('awesomeString'.slice(0,6)); // awesome
   /// print('awesomeString'.slice(7)); // String
