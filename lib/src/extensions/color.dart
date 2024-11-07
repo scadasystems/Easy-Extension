@@ -72,7 +72,7 @@ extension ColorExtension on Color {
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
   Color mix(Color toColor, [int amount = 50]) => EasyColor(this).mix(input: toColor, amount: amount).color;
 
-  /// Font color  contrasted against color. <br>
+  /// Font color contrasted against color. <br>
   /// Only [Colors.black] & [Color.white]
-  Color get getFontColorRelativeBackgroundColor => computeLuminance() > 0.179 ? Colors.black : Colors.white;
+  Color get toRelativeColor => computeLuminance() > 0.179 ? Colors.black : Colors.white;
 }

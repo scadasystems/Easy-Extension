@@ -32,6 +32,15 @@ extension IntExtension on int {
       }
     }
   }
+
+  String toBytesHumanString([int fractionDigits = 2]) {
+    final sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+
+    if (this == 0) return '0 Byte';
+
+    final i = (math.log(this) / math.log(1024)).floor();
+    return '${(this / math.pow(1024, i)).toStringAsFixed(fractionDigits)} ${sizes[i]}';
+  }
 }
 
 extension DoubleExtension on double {
