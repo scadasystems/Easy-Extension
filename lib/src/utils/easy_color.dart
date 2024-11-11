@@ -147,4 +147,6 @@ class EasyColor {
   Color get color {
     return _color;
   }
+
+  static Color random() => Color((Random().nextDouble() * 0xFFFFFFFF).toInt()).withOpacity(1.0);
 }
