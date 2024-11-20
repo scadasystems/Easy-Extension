@@ -106,4 +106,9 @@ extension NumExtension<T extends num> on T {
     int minutes = (this % 3600) ~/ 60;
     return 'UTC${hours >= 0 ? '+' : '-'}${hours.abs()}${minutes != 0 ? ":${minutes.toString().padLeft(2, '0')}" : ''}';
   }
+
+  /// ```dart
+  ///  0.5.toAngle; // 0.5 * (math.pi / 180)
+  /// ```
+  double get toAngle => this * (math.pi / 180);
 }
