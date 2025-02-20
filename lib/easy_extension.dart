@@ -44,6 +44,7 @@ part 'src/extensions/num.dart';
 part 'src/extensions/scroll_controller.dart';
 part 'src/extensions/string.dart';
 part 'src/extensions/string_buffer.dart';
+part 'src/extensions/time_of_day.dart';
 part 'src/extensions/uint8_list.dart';
 part 'src/extensions/widget.dart';
 part 'src/utils/easy_color.dart';
