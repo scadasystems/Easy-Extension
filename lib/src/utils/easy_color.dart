@@ -7,7 +7,8 @@ class EasyColor {
     _color = Color.fromARGB(color.alpha, color.red, color.green, color.blue);
   }
 
-  factory EasyColor.fromRGB({required int r, required int g, required int b, int a = 100}) {
+  factory EasyColor.fromRGB(
+      {required int r, required int g, required int b, int a = 100}) {
     return EasyColor(Color.fromARGB(a, r, g, b));
   }
 
@@ -82,7 +83,8 @@ class EasyColor {
     final color = Color.fromARGB(
       _color.alpha,
       math.max(0, math.min(255, _color.red - (255 * -(amount / 100)).round())),
-      math.max(0, math.min(255, _color.green - (255 * -(amount / 100)).round())),
+      math.max(
+          0, math.min(255, _color.green - (255 * -(amount / 100)).round())),
       math.max(0, math.min(255, _color.blue - (255 * -(amount / 100)).round())),
     );
     return EasyColor(color);
@@ -148,5 +150,9 @@ class EasyColor {
     return _color;
   }
 
-  static Color random() => Color((Random().nextDouble() * 0xFFFFFFFF).toInt()).withOpacity(1.0);
+  static Color random() => Color((Random().nextDouble() * 0xFFFFFFFF).toInt())
+      .withValues(alpha: 1.0);
+
+  static Color fromHex(String hexString) =>
+      Color(int.parse(hexString, radix: 16));
 }
