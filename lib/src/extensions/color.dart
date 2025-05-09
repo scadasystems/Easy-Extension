@@ -9,11 +9,23 @@ extension ColorExtension on Color {
     return (a << 24) | (r << 16) | (g << 8) | b;
   }
 
-  String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'
-      '${alpha.toRadixString(16).padLeft(2, '0')}'
-      '${red.toRadixString(16).padLeft(2, '0')}'
-      '${green.toRadixString(16).padLeft(2, '0')}'
-      '${blue.toRadixString(16).padLeft(2, '0')}';
+  // String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'
+  //     '${alpha.toRadixString(16).padLeft(2, '0')}'
+  //     '${red.toRadixString(16).padLeft(2, '0')}'
+  //     '${green.toRadixString(16).padLeft(2, '0')}'
+  //     '${blue.toRadixString(16).padLeft(2, '0')}';
+
+  String toHex({bool includeHashSign = false, bool includeAlpha = true}) {
+    String hex = toValue.toRadixString(16).padLeft(8, '0');
+
+    if (!includeAlpha) {
+      hex = hex.substring(2);
+    }
+    if (includeHashSign) {
+      hex = '#$hex';
+    }
+    return hex.toUpperCase();
+  }
 
   Color fromHex(String hexString) {
     final buffer = StringBuffer();
@@ -51,7 +63,8 @@ extension ColorExtension on Color {
   Color shade([int amount = 10]) => EasyColor(this).shade(amount).color;
 
   /// Desaturate the color a given amount, from 0 to 100. Providing 100 will is the same as calling greyscale.
-  Color desaturate([int amount = 10]) => EasyColor(this).desaturate(amount).color;
+  Color desaturate([int amount = 10]) =>
+      EasyColor(this).desaturate(amount).color;
 
   /// Saturate the color a given amount, from 0 to 100.
   Color saturate([int amount = 10]) => EasyColor(this).saturate(amount).color;
@@ -78,9 +91,11 @@ extension ColorExtension on Color {
   Color get compliment => EasyColor(this).complement().color;
 
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
-  Color mix(Color toColor, [int amount = 50]) => EasyColor(this).mix(input: toColor, amount: amount).color;
+  Color mix(Color toColor, [int amount = 50]) =>
+      EasyColor(this).mix(input: toColor, amount: amount).color;
 
   /// Font color contrasted against color. <br>
   /// Only [Colors.black] & [Color.white]
-  Color get toRelativeColor => computeLuminance() > 0.179 ? Colors.black : Colors.white;
+  Color get toRelativeColor =>
+      computeLuminance() > 0.179 ? Colors.black : Colors.white;
 }
