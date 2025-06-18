@@ -174,6 +174,16 @@ extension IterableExtension<E> on Iterable<E> {
     }
   }
 
+  Iterable<E> distinctBy<K>(K Function(E) keySelector) sync* {
+    final existing = HashSet<K>();
+    for (final current in this) {
+      final key = keySelector(current);
+      if (existing.add(key)) {
+        yield current;
+      }
+    }
+  }
+
   Iterable<R> mapIndexed<R>(R Function(int index, E) transform) sync* {
     var index = 0;
     for (final element in this) {
