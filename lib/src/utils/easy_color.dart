@@ -153,7 +153,9 @@ class EasyColor {
   static Color random() => Color((Random().nextDouble() * 0xFFFFFFFF).toInt())
       .withValues(alpha: 1.0);
 
-  static Color fromHex(String hex) => Color(int.parse(hex, radix: 16));
+  static Color fromHex(String hex) => hex.length == 8
+      ? Color(int.parse(hex, radix: 16))
+      : Color(int.parse(hex, radix: 16)).withValues(alpha: 1.0);
 
   static Color? fromHexOrNull(String? hex) => hex != null ? fromHex(hex) : null;
 }
