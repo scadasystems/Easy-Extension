@@ -17,7 +17,8 @@ class Log {
   static String _format = 'yyyy-MM-dd HH:mm:ss.SSS';
   static String _prefix = '';
 
-  static String get _getTime => _enableTime ? '${DateTime.now().toFormat(_format)} ┠ ' : '';
+  static String get _getTime =>
+      _enableTime ? '${DateTime.now().toFormat(_format)} ┠ ' : '';
 
   static void initialize({
     bool isDebugMode = kDebugMode,
