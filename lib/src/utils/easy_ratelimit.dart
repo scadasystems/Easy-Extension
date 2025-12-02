@@ -1,6 +1,4 @@
-library easy_debounce;
-
-import 'dart:async';
+part of '../../easy_extension.dart';
 
 typedef EasyRateLimitCallback = void Function();
 

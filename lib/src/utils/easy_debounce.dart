@@ -1,6 +1,4 @@
-library easy_debounce;
-
-import 'dart:async';
+part of '../../easy_extension.dart';
 
 /// A void callback, i.e. (){}, so we don't need to import e.g. `dart.ui`
 /// just for the VoidCallback type definition.
